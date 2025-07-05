@@ -20,7 +20,7 @@ Live camera build by Flask and hosted by Gunicorn
 
 ### Systemd (Option 2)
 - Create Linux service to launch program in background
-- Create file `/etc/systemd/system/live-camera-py-app.service`
+- Create file `/etc/systemd/system/live-camera-py.service`
 
 
 ```
@@ -40,5 +40,5 @@ User={your-username}
 WantedBy=multi-user.target
 ```
 
-- Start - `systemctl start live-camera-py-app`
-- Enable auto start after system boot - `systemctl enable live-camera-py-app`
+- Start - `systemctl start live-camera-py`
+- Enable auto start after system boot - `systemctl enable live-camera-py`
