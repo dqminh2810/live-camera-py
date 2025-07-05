@@ -1,20 +1,20 @@
-#Live camera py
+# Live camera py
 Live camera build by Flask and hosted by Gunicorn
 
-##Requirements
-###Software
+## Requirements
+### Software
 - Python v3.11
 - Docker v28.1.1
 - docker-compose v2.5.0
 - Debian v12 (bookworm) support picamera2 module
-###Hardware
+### Hardware
 - Raspberry Pi 4B
 - Integrated Pi camera
 
-##Test pi camera available
+## Test pi camera available
 - `libcamera-hello -t 1 --nopreview`
 
-##Build & Launch
+## Build & Launch
 ### Docker (Option 1)
 - `docker-compose up -d`
 
@@ -22,7 +22,7 @@ Live camera build by Flask and hosted by Gunicorn
 - Create Linux service to launch program in background
 - Create file `/etc/systemd/system/live-camera-py-app.service`
 
-```
+
 ```
 [Unit]
 Description=Live Camera Pi
@@ -38,7 +38,6 @@ User={your-username}
 
 [Install]
 WantedBy=multi-user.target
-```
 ```
 
 - Start - `systemctl start live-camera-py-app`
