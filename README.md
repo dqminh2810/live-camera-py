@@ -45,7 +45,7 @@ WantedBy=multi-user.target
 
 ## Expose to internet
 ### Ngrok (no require register domain name) [optional]
-- Install Ngrok then launch `ngrok start 5000`
+- Install Ngrok then launch `ngrok http 5000`
 - `Connect to your service by ngrok given domain address`
 
 ### Cloudflare tunnel (require register domain name) [recommend]
