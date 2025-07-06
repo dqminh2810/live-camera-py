@@ -1,5 +1,5 @@
 # Live camera py
-Live camera build by Flask and hosted by Gunicorn
+Live camera developed with picamera2 module & Flask, hosted by Gunicorn, expose to Internet by Cloudflare
 
 ## Requirements
 ### Software
@@ -42,3 +42,24 @@ WantedBy=multi-user.target
 
 - Start - `systemctl start live-camera-py`
 - Enable auto start after system boot - `systemctl enable live-camera-py`
+
+## Expose to internet
+### Ngrok (no require register domain name) [optional]
+- Install Ngrok then launch `ngrok start 5000`
+- `Connect to your service by ngrok given domain address`
+
+### Cloudflare tunnel (require register domain name) [recommend]
+[Guide](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/)
+- Register your domain name with any provider
+- Create cloudflare tunnel
+- Update your NS provider with cloudflare NS
+- Install cloudflare & setup tunnel on your host
+- Connect your service to tunnel (provide hostname (subdomain + domain) & service address)
+- Create cloudflare DNS record for your service
+- `Connect to your service by your hostname`
+
+### Port forward (require access to router & permission to open public port) [not recommend]
+- Enable firewall inbound/outbound port on your host
+- Check with your ISP if it allow NAT forward incoming connections for port forwading 
+- Connect to router & configure port forwarding for your host IP address with specific port
+- `Connect to your service by your public IP address`
