@@ -40,7 +40,7 @@ Live camera developed with Flask & picamera2 library, hosted by Gunicorn, expose
 - Install cloudflare & setup tunnel on your host
 - Connect your service to tunnel (provide hostname (subdomain + domain) & service address)
 - Create cloudflare DNS record for your service
-- `Connect to your service by your hostname`
+- `Connect to your service by your Fully Qualified Domain Name (subdomain + domain)`
 
 ### Port forward (require access to router & permission to open public port) [not recommend]
 - Enable firewall inbound/outbound port on your host
