@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /run/udev:/run/udev:ro
+      - /run/udev:/run/udev:ro  #share camera device with Docker
     ports:
       - "5000:5000"
     restart: always
