@@ -1,47 +1,31 @@
+Live camera developed with Flask & picamera2 library, hosted by Gunicorn, expose to Internet by Cloudflare
 # Live camera py
-Live camera developed with picamera2 module & Flask, hosted by Gunicorn, expose to Internet by Cloudflare
 
 ## Requirements
 ### Software
-- Python v3.11
-- Docker v28.1.1
-- docker-compose v2.5.0
+- Python 3
+- Docker
+- docker-compose
 - Debian v12 (bookworm) support picamera2 module
 ### Hardware
 - Raspberry Pi 4B
 - Integrated Pi camera
 
 ## Test pi camera available
-- `libcamera-hello -t 1 --nopreview`
+- `libcamera-hello -t 1`
 
 ## Build & Launch
-### Docker (Option 1)
+### Docker
 - `docker-compose up -d`
+- Check logs - `docker logs -f {your-app-id}`
 
-### Systemd (Option 2)
-- Create Linux service to launch program in background
-- Create file `/etc/systemd/system/live-camera-py.service`
-
-
-```
-[Unit]
-Description=Live Camera Pi
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/python3 {your-work-directory}/app.py
-WorkingDirectory={your-work-directory}
-StandardOutput=inherit
-StandardError=inherit
-Restart=always
-User={your-username}
-
-[Install]
-WantedBy=multi-user.target
-```
-
-- Start - `systemctl start live-camera-py`
-- Enable auto start after system boot - `systemctl enable live-camera-py`
+### Systemd (optional)
+- To execute `docker-compose up` as a systemd service
+- Copy systemd sercvice file - `cp ./live-camera-py.service /etc/systemd/system/live-camera-py.service`
+- Enable auto start automatically at system boot - `systemctl enable live-camera-py.service`
+- Start - `systemctl start live-camera-py.service`
+- Restart your host - `shutdown -r now`
+- Check logs - `systemctl status live-camera-py.service` || `journalctl -xeu live-camera-py.service`
 
 ## Expose to internet
 ### Ngrok (no require register domain name) [optional]

@@ -1,0 +1,17 @@
+[Unit]
+Description=Live Camera Pi with Docker
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory={path-to-your-working-directory}
+ExecStart=/usr/local/bin/docker-compose up -d
+ExecStop=/usr/local/bin/docker-compose down
+# Optional: If your docker-compose.yml is not named docker-compose.yml
+# ExecStart=/usr/local/bin/docker-compose -f /path/to/your/docker-compose.yml up -d
+# ExecStop=/usr/local/bin/docker-compose -f /path/to/your/docker-compose.yml down
+
+[Install]
+WantedBy=multi-user.target
