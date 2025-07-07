@@ -32,18 +32,21 @@ Live camera developed with Flask & picamera2 library, hosted by Gunicorn, expose
 - Install Ngrok then launch `ngrok http 5000`
 - `Connect to your service by ngrok given domain address`
 
-### Cloudflare tunnel (require register domain name) [recommend]
+### Cloudflare tunnel (require register DNS) [recommend]
 [Guide](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/)
 - Register your domain name with any provider
 - Create cloudflare tunnel
 - Update your NS provider with cloudflare NS
-- Install cloudflare & setup tunnel on your host
-- Connect your service to tunnel (provide hostname (subdomain + domain) & service address)
+- Install cloudflare connector & setup tunnel on your host
+- Connect your service to tunnel (provide hostname [subdomain + domain] & service address [internal IP address])
 - Create cloudflare DNS record for your service
 - `Connect to your service by your Fully Qualified Domain Name (subdomain + domain)`
 
 ### Port forward (require access to router & permission to open public port) [not recommend]
 - Enable firewall inbound/outbound port on your host
 - Check with your ISP if it allow NAT forward incoming connections for port forwading 
-- Connect to router & configure port forwarding for your host IP address with specific port
-- `Connect to your service by your public IP address`
+- Connect to router & configure port forwarding for your internal host IP address with specific port
+- Register your domain name with any provider
+- Create DNS record for your service & link to your external IP address
+- `Connect to your service by your domain registered`
+
