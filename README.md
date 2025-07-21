@@ -32,7 +32,7 @@ Live camera developed with Flask & picamera2 library, hosted by Gunicorn, expose
 - Install Ngrok then launch `ngrok http 5000`
 - `Connect to your service by ngrok given domain address`
 
-### Cloudflare tunnel (require register DNS) [recommend]
+### Cloudflare tunnel (require register DNS)
 [Guide](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/)
 - Register your domain name with any provider
 - Create cloudflare tunnel
