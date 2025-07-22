@@ -6,7 +6,7 @@ Live camera developed with Flask & picamera2 library, hosted by Gunicorn, expose
 - Python 3
 - Docker
 - docker-compose
-- Debian v12 (bookworm) support picamera2 module
+- Debian v12 (bookworm) support picamera2 module (built on top of libcamera C++)
 ### Hardware
 - Raspberry Pi 4B
 - Integrated Pi camera
@@ -40,7 +40,7 @@ Live camera developed with Flask & picamera2 library, hosted by Gunicorn, expose
 - Install cloudflare connector & setup tunnel on your host
 - Connect your service to tunnel (provide hostname [subdomain + domain] & service address [internal IP address])
 - Create cloudflare DNS record for your service
-- `Connect to your service by your Fucly Qualified Domain Name (subdomain + domain)`
+- `Connect to your service by your Qualified Domain Name (subdomain + domain)`
 
 ### Port forward (require access to router & permissions to open public port) [not recommend]
 - Enable firewall inbound/outbound port on your host
