@@ -50,3 +50,5 @@ Live camera developed with Flask & picamera2 library, hosted by Gunicorn, expose
 - Create DNS record for your service & link to your external IP address
 - `Connect to your service by your domain registered`
 
+## ARCHITECTURE
+![DIAGRAM](https://github.com/dqminh2810/live-camera-py/blob/main/live-camera-py.jpg)
